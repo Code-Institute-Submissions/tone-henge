@@ -17,9 +17,65 @@
 </head>
 
 <body>
+    <div class="container-fluid p-0">
+        <!-- Navbar Component -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <!-- Brand/Logo -->
+                <a class="navbar-brand" href="#">Tone Henge</a>
 
-    {% block content %} {% endblock content %}
+                <!-- Nav Toggle -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-collapse"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
+                <!-- Navbar Nav -->
+                <div class="collapse navbar-collapse" id="navbar-collapse">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <!-- Home -->
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+
+                        <!-- Guitars Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="guitars-dropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Guitars</a>
+                            <ul class="dropdown-menu" aria-labelledby="guitars-dropdown">
+                                <li><a class="dropdown-item" href="#">Electric</a></li>
+                                <li><a class="dropdown-item" href="#">Acoustic</a></li>
+                                <li><a class="dropdown-item" href="#">Bass</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- Amps Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="amps-dropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Amplifiers</a>
+                            <ul class="dropdown-menu" aria-labelledby="amps-dropdown">
+                                <li><a class="dropdown-item" href="#">Solid State</a></li>
+                                <li><a class="dropdown-item" href="#">Valve</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- Accessories -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Accessories</a>
+                        </li>
+                    </ul>
+
+                    <!-- Search -->
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+        {% block content %} {% endblock content %}
+    </div>
 
     <!-- JavaScript Files -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
