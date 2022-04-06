@@ -17,3 +17,10 @@
 footer {
     height: 100px;
 }
+
+/* Home */
+.epic-cont {
+    height: 80vh;
+    background: url('/static/images/home.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
