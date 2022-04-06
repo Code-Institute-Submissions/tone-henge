@@ -19,7 +19,7 @@
 <body>
     <div class="container-fluid p-0">
         <!-- Navbar Header -->
-        <div class="row justify-content-between justify-content-sm-end bg-light g-0">
+        <div class="row justify-content-between justify-content-sm-end bg-red g-0">
             <!-- Brand -->
             <div class="col-4 text-center mt-2 ms-1">
                 <a href="#" id="logo" class="text-decoration-none text-dark fs-1">Tone Henge</a>
@@ -40,19 +40,22 @@
                 </div>
 
                 <!-- Basket -->
-                <div class="me-3 text-center mt-2">
-                    <i class="fas fa-shopping-basket fs-4"></i>
-                    <span class="d-block">£0.00</span>
-                </div>
+                <a href="" class="text-decoration-none text-dark">
+                    <div class="me-3 text-center mt-2">
+                        <i class="fas fa-shopping-basket fs-4"></i>
+                        <span class="d-block">£0.00</span>
+                    </div>
+                </a>
+
             </div>
         </div>
 
         <!-- Navbar Component -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light bg-red">
             <div class="container-fluid">
                 <!-- Nav Toggle -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-collapse"
-                    aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -61,7 +64,7 @@
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <!-- Home -->
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link" aria-current="page" href="#">Home</a>
                         </li>
 
                         <!-- Guitars Dropdown -->
@@ -94,7 +97,7 @@
                     <!-- Search -->
                     <form class="d-flex">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
+                        <button class="btn btn-outline-light" type="submit">Search</button>
                     </form>
                 </div>
             </div>
@@ -103,13 +106,17 @@
         {% block content %} {% endblock content %}
 
         <!-- Footer -->
-        <footer class="fixed-bottom bg-light text-center">
+        <footer class="fixed-bottom bg-red text-center">
             <ul id="ftr-socials" class="list-inline fs-2">
-                <li class="list-inline-item"><a href=""><i class="fab fa-facebook-f text-dark"></i></a></li>
-                <li class="list-inline-item"><a href=""><i class="fab fa-instagram text-dark"></i></a></li>
-                <li class="list-inline-item"><a href=""><i class="fab fa-twitter text-dark"></i></a></li>
+                <li class="list-inline-item"><a href="https://www.facebook.com/" target="_blank"><i
+                            class="fab fa-facebook-f text-dark"></i></a></li>
+                <li class="list-inline-item"><a href="https://www.instagram.com/" target="_blank"><i
+                            class="fab fa-instagram text-dark"></i></a></li>
+                <li class="list-inline-item"><a href="https://twitter.com/" target="_blank"><i
+                            class="fab fa-twitter text-dark"></i></a>
+                </li>
             </ul>
-            <ul class="list-inline">
+            <ul class="list-inline text-white">
                 <li class="list-inline-item">Contact Us |</li>
                 <li class="list-inline-item">Address Placeholder |</li>
                 <li class="list-inline-item">&copy;Tone Henge</li>

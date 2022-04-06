@@ -1,3 +1,19 @@
+/* General */
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+.bg-red {
+    background-color: #dc3545;
+}
+
+#logo {
+    font-family: 'Righteous', cursive;
+}
+
+.nav-link {
+    font-size: 18px;
+    color: #fff !important;
+}
+
 footer {
     height: 100px;
 }
