@@ -14,6 +14,10 @@
     color: #fff !important;
 }
 
+.dropdown-item:focus {
+    background-color: #dc3545;
+}
+
 footer {
     height: 100px;
 }
@@ -49,5 +53,5 @@ footer {
 
 .epic-cont a {
     margin-bottom: 200px;
-    opacity: 0.8;
+    opacity: 0.9;
 }
