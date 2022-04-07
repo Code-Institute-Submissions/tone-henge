@@ -59,3 +59,9 @@ footer {
     margin-bottom: 200px;
     opacity: 0.9;
 }
+
+/* Products */
+.preview-img {
+    height: 280px;
+    object-fit: cover;
+}
