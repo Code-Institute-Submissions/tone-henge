@@ -1,9 +1,24 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-{% for prod in products %}
-<h1>{{ prod.name }}</h1>
-{% endfor %}
-
+<div class="row g-0 m-3">
+    {% for product in products %}
+    <!-- Product Preview Card Element -->
+    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 justify-content-center d-flex p-1">
+        <div class="card" style="width: 18rem;">
+            <img src="{{ product.image.url }}" class="card-img-top" alt="product preview">
+            <div class="card-body">
+                <div class="d-flex justify-content-between">
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    <span class="align-bottom">£{{ product.price }}</span>
+                </div>
+                <span class="fst-italic fw-light">{{ product.category }}</span>
+                <hr>
+                <p class="card-text">{{ product.content }}</p>
+                <a href="#" class="btn bg-red btn-outline-dark w-100 border-0 text-white">Details</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
 {% endblock content %}
