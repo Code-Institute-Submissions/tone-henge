@@ -22,7 +22,7 @@ footer {
     height: 100px;
 }
 
-/* Float - Credit to Ian Lunn / Hover.CSS */
+/* Float - Credit to Ian Lunn / https://github.com/IanLunn/Hover */
 .hvr-float {
     display: inline-block;
     vertical-align: middle;
