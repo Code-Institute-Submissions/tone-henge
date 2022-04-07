@@ -18,6 +18,10 @@
     background-color: #dc3545;
 }
 
+.content-container {
+    padding-bottom: 100px;
+}
+
 footer {
     height: 100px;
 }
