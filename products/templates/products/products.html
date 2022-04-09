@@ -10,12 +10,15 @@
                 <img src="{{ product.image.url }}" class="card-img-top preview-img" alt="product preview">
                 <div class="card-body">
                     <div class="d-flex justify-content-between">
-                        <h5 class="card-title">{{ product.name }}</h5>
+                        <a href="{% url 'product_view' product.id %}" class="text-decoration-none text-dark">
+                            <h5 class="card-title">{{ product.name }}</h5>
+                        </a>
                         <span class="align-bottom">£{{ product.price }}</span>
                     </div>
                     <span class="fst-italic fw-light">{{ product.category }}</span>
                     <hr>
-                    <a href="#" class="btn bg-red btn-outline-dark w-100 border-0 text-white">Details</a>
+                    <a href="{% url 'product_view' product.id %}"
+                        class="btn bg-red btn-outline-dark w-100 border-0 text-white">Details</a>
                 </div>
             </div>
         </div>
