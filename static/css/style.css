@@ -69,4 +69,5 @@ footer {
 /* Product View */
 .product-img {
     max-height: 400px;
+    object-fit: contain;
 }
