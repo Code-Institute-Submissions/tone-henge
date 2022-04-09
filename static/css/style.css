@@ -65,3 +65,8 @@ footer {
     height: 280px;
     object-fit: contain;
 }
+
+/* Product View */
+.product-img {
+    max-height: 400px;
+}

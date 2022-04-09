@@ -1,5 +1,19 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>{{ product.name }}</h1>
+<div class="row content-container justify-content-center g-0 mt-5">
+    <!-- Image -->
+    <div class="col-12 col-md-8 col-lg-4 d-flex justify-content-center m-2">
+        <img src="{{ product.image.url }}" alt="product image" class="img-fluid p-2 product-img">
+    </div>
+
+    <!-- Details -->
+    <div class="col-11 col-md-10 col-lg-4 text-center mb-3">
+        <h1>{{ product.name }}</h1>
+        <span class="d-block fs-3 fst-italic">£{{ product.price }}</span>
+        <span class="d-block mt-3 text-start fw-bold">Description:</span>
+        <p class="text-start">{{ product.content }}</p>
+        <button type="button" class="btn btn-success">Add to Basket</button>
+    </div>
+</div>
 {% endblock content %}
