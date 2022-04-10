@@ -107,7 +107,7 @@ WSGI_APPLICATION = 'tonehenge.wsgi.application'
 
 if 'DATABASE_URL' in os.environ:
     DATABASES = {
-        'default': dj_database_url.parse('postgres://qykxrvqlsvjcxq:40ff956a7b2989867418db6e984a1e270b650da9518251976fc6c6ac84f0114d@ec2-63-32-248-14.eu-west-1.compute.amazonaws.com:5432/d55pmpb1d9umj')
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
 else:
     DATABASES = {
