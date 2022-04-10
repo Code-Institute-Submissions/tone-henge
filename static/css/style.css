@@ -71,3 +71,7 @@ footer {
     max-height: 400px;
     object-fit: contain;
 }
+
+.border-gry {
+    border: 1px solid rgba(0, 0, 0, .125);
+}

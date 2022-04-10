@@ -3,7 +3,7 @@
 {% block content %}
 <div class="row content-container justify-content-center g-0 mt-5">
     <!-- Image -->
-    <div class="col-12 col-md-8 col-lg-4 d-flex justify-content-center m-2 me-md-3">
+    <div class="col-12 col-md-8 col-lg-4 d-flex justify-content-center m-2 me-md-5 border-gry">
         <img src="{{ product.image.url }}" alt="product image" class="img-fluid p-2 product-img">
     </div>
 
@@ -11,8 +11,10 @@
     <div class="col-11 col-md-10 col-lg-4 text-center mb-3">
         <h1>{{ product.name }}</h1>
         <span class="d-block fs-3 fst-italic">£{{ product.price }}</span>
+        <hr>
         <span class="d-block mt-3 text-start fw-bold">Description:</span>
         <p class="text-start">{{ product.content }}</p>
+        <hr>
         <button type="button" class="btn bg-red btn-outline-dark border-0">Add to Basket</button>
     </div>
 </div>
