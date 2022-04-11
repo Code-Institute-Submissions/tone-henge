@@ -80,8 +80,10 @@
                             <a class="nav-link dropdown-toggle" href="#" id="guitars-dropdown" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">Guitars</a>
                             <ul class="dropdown-menu" aria-labelledby="guitars-dropdown">
-                                <li><a class="dropdown-item" href="#">Electric</a></li>
-                                <li><a class="dropdown-item" href="#">Acoustic</a></li>
+                                <li><a class="dropdown-item"
+                                        href="{% url 'products' %}?category=electric+guitar">Electric</a></li>
+                                <li><a class="dropdown-item"
+                                        href="{% url 'products' %}?category=acoustic+guitar">Acoustic</a></li>
                             </ul>
                         </li>
 
@@ -90,14 +92,16 @@
                             <a class="nav-link dropdown-toggle" href="#" id="amps-dropdown" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">Amplifiers</a>
                             <ul class="dropdown-menu" aria-labelledby="amps-dropdown">
-                                <li><a class="dropdown-item" href="#">Solid State</a></li>
-                                <li><a class="dropdown-item" href="#">Valve</a></li>
+                                <li><a class="dropdown-item" href="{% url 'products' %}?category=solid+state+amp">Solid
+                                        State</a></li>
+                                <li><a class="dropdown-item" href="{% url 'products' %}?category=valve+amp">Valve</a>
+                                </li>
                             </ul>
                         </li>
 
                         <!-- Accessories -->
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Accessories</a>
+                            <a class="nav-link" href="{% url 'products' %}?category=accessories">Accessories</a>
                         </li>
                     </ul>
 
