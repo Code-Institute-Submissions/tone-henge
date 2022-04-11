@@ -1,9 +1,17 @@
 from django.shortcuts import render
+from django.db.models import Q
 from .models import Product
 
 
 def products(request):
     products = Product.objects.all()
+
+    if request.GET:
+        if 'q' in request.GET:
+            query = request.GET['q']
+
+            queries = Q(name__icontains=query) | Q(content__icontains=query)
+            products = products.filter(queries)
 
     context = {'products': products, }
 
