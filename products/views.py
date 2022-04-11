@@ -1,3 +1,4 @@
+from unicodedata import category
 from django.shortcuts import render
 from django.db.models import Q
 from .models import Product
@@ -10,7 +11,7 @@ def products(request):
         if 'q' in request.GET:
             query = request.GET['q']
 
-            queries = Q(name__icontains=query) | Q(content__icontains=query)
+            queries = Q(name__icontains=query) | Q(content__icontains=query) | Q(category__name__icontains=query)
             products = products.filter(queries)
 
     context = {'products': products, }
