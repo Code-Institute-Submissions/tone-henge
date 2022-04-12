@@ -19,6 +19,19 @@ def products(request):
             category = request.GET['category'].replace('+', ' ')
             products = Product.objects.filter(category__name__iexact=category)
 
+        if 'sort' in request.GET:
+            sortkey = request.GET['sort']
+
+            if sortkey == 'category':
+                sortkey = 'category__name'
+
+            if 'order' in request.GET:
+                order = request.GET['order']
+                if order == 'desc':
+                    sortkey = f'-{sortkey}'
+
+            products = products.order_by(sortkey)
+
     context = {'products': products, 'search_term': search_term, }
 
     return render(request, 'products/products.html', context)
