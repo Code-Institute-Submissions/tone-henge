@@ -2,6 +2,14 @@
 
 {% block content %}
 <div class="content-container">
+    <div class="row g-0">
+        <div class="col ms-2 mt-2 text-center">
+            <span class="fs-5">Displaying {{ products | length }} results{% if search_term %} for
+                <strong>"{{search_term}}"</strong>
+                {% endif %}</span>
+        </div>
+    </div>
+
     <div class="row g-0 m-3">
         {% for product in products %}
         <!-- Product Preview Card Element -->
