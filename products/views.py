@@ -6,6 +6,7 @@ from .models import Product
 def products(request):
     products = Product.objects.all()
     search_term = None
+    sort_method = None
 
     if request.GET:
         if 'q' in request.GET:
@@ -21,6 +22,7 @@ def products(request):
 
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
+            sort = sortkey
 
             if sortkey == 'category':
                 sortkey = 'category__name'
@@ -31,8 +33,10 @@ def products(request):
                     sortkey = f'-{sortkey}'
 
             products = products.order_by(sortkey)
+            sort_method = f'{sort}_{order}'
 
-    context = {'products': products, 'search_term': search_term, }
+    context = {'products': products, 'search_term': search_term,
+               'sort_method': sort_method, }
 
     return render(request, 'products/products.html', context)
 

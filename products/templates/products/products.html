@@ -2,11 +2,30 @@
 
 {% block content %}
 <div class="content-container">
-    <div class="row g-0">
-        <div class="col ms-2 mt-2 text-center">
+    <div class="row g-0 justify-content-center">
+        <div class="col-11 col-md ms-md-2 mt-2 text-center text-md-start">
             <span class="fs-5">Displaying {{ products | length }} results{% if search_term %} for
                 <strong>"{{search_term}}"</strong>
                 {% endif %}</span>
+        </div>
+
+        <div class="col-11 col-md-4 mt-2 me-md-2">
+            <select class="form-select">
+                <option value="reset" {% if sort_method == 'None_None' %}selected{% endif %}>Order by...</option>
+                <option value="price_ac" {% if sort_method == 'price_asc' %}selected{% endif %}>Price (Ascending)
+                </option>
+                <option value="price_desc" {% if sort_method == 'price_desc' %}selected{% endif %}>Price
+                    (Descending)
+                </option>
+                <option value="name_asc" {% if sort_method == 'name_asc' %}selected{% endif %}>Name (Ascending)
+                </option>
+                <option value="name_desc" {% if sort_method == 'name_desc' %}selected{% endif %}>Name (Descending)
+                </option>
+                <option value="category_asc" {% if sort_method == 'category_asc' %}selected{% endif %}>Category
+                    (Ascending)</option>
+                <option value="category_desc" {% if sort_method == 'category_desc' %}selected{% endif %}>Category
+                    (Descending)</option>
+            </select>
         </div>
     </div>
 
