@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 <div class="content-container">
@@ -10,16 +11,12 @@
         </div>
 
         <div class="col-11 col-md-4 mt-2 me-md-2">
-            <select class="form-select">
+            <select class="form-select" id="sort-by">
                 <option value="reset" {% if sort_method == 'None_None' %}selected{% endif %}>Order by...</option>
-                <option value="price_ac" {% if sort_method == 'price_asc' %}selected{% endif %}>Price (Ascending)
+                <option value="price_asc" {% if sort_method == 'price_asc' %}selected{% endif %}>Price (Ascending)
                 </option>
                 <option value="price_desc" {% if sort_method == 'price_desc' %}selected{% endif %}>Price
                     (Descending)
-                </option>
-                <option value="name_asc" {% if sort_method == 'name_asc' %}selected{% endif %}>Name (Ascending)
-                </option>
-                <option value="name_desc" {% if sort_method == 'name_desc' %}selected{% endif %}>Name (Descending)
                 </option>
                 <option value="category_asc" {% if sort_method == 'category_asc' %}selected{% endif %}>Category
                     (Ascending)</option>
@@ -51,3 +48,7 @@
     </div>
 </div>
 {% endblock content %}
+
+{% block extrajs %}
+<script src="{% static 'products/js/selector.js' %}"></script>
+{% endblock extrajs %}

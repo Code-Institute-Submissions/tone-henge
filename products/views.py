@@ -7,6 +7,7 @@ def products(request):
     products = Product.objects.all()
     search_term = None
     sort_method = None
+    order = None
 
     if request.GET:
         if 'q' in request.GET:
