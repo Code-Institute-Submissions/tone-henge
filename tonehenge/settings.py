@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'home',
     'products',
+    'basket',
     'storages',
 ]
 
@@ -88,7 +89,8 @@ SITE_ID = 1
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-ACCOUNT_FORMS = {'login': 'custom_forms.CustomLoginForm', 'signup': 'custom_forms.CustomSignupForm'}
+ACCOUNT_FORMS = {'login': 'custom_forms.CustomLoginForm',
+                 'signup': 'custom_forms.CustomSignupForm'}
 
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
