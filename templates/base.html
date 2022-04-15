@@ -47,7 +47,13 @@
                 <a href="{% url 'basket' %}" class="text-decoration-none text-dark">
                     <div class="me-3 text-center mt-2">
                         <i class="fas fa-shopping-basket fs-4"></i>
-                        <span class="d-block">£0.00</span>
+                        <span class="d-block">
+                            {% if total %}
+                            £{{ total|floatformat:2 }}
+                            {% else %}
+                            £0.00
+                            {% endif %}
+                        </span>
                     </div>
                 </a>
             </div>
