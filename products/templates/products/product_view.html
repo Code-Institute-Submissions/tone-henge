@@ -15,7 +15,27 @@
         <span class="d-block mt-3 text-start fw-bold">Description:</span>
         <p class="text-start">{{ product.content }}</p>
         <hr>
-        <button type="button" class="btn bg-red btn-outline-dark border-0">Add to Basket</button>
+
+        <!-- User Input Component -->
+        <div class="row g-0 justify-content-center">
+            <div class="col-10 col-md">
+                <form action="" method="POST">
+                    <div class="row justify-content-center">
+                        <div class="col-10 col-md text-md-end">
+                            <label class="col-form-label" for="qty_input_{{ product.id }}">Quantity:</label>
+                        </div>
+                        <div class="col-10 col-md">
+                            <input name="quantity" type="number" class="form-control" value="1" min="1" max="99"
+                                id="qty_input_{{ product.id }}" data-product-id="{{ product.id }}">
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-10 col-md mt-2 mt-md-0">
+                <button type="button" class="btn bg-red btn-outline-dark border-0">Add to Basket</button>
+            </div>
+        </div>
     </div>
 </div>
 {% endblock content %}
