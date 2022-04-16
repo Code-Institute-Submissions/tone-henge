@@ -2,29 +2,60 @@
 
 {% block content %}
 <div class="content-container">
-
     <!-- Header -->
-    <div class="row mt-2 g-0">
+    <div class="row m-2 g-0">
         <div class="col text-center">
             <h1 class="fs-2">Your Basket: £{{ total }}</h1>
         </div>
     </div>
 
     <div class="row g-0 justify-content-center">
-        <div class="col-10">
+        <div class="col-11 col-lg-8">
             <!-- Basket Items -->
             {% if basket_items %}
-            <div class="table">
-                test render
+            <table class="table table-striped rounded align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">Order Details</th>
+                        <th scope="col"></th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Price p/Item</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for item in basket_items %}
+                    <tr>
+                        <td>
+                            <img class="img-fluid basket-img" src="{{ item.product.image.url }}" alt="product image">
+                        </td>
+                        <td class="">
+                            {{ item.product.name }}
+                        </td>
+                        <td>
+                            {{ item.quantity }}
+                        </td>
+                        <td>
+                            £{{ item.product.price }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <div class="row mb-3">
+                <div class="col text-end">
+                    <a href="{% url 'products' %}" class="btn btn-outline-dark">Keep Shopping</a>
+                    <a href="#" class="btn bg-red btn-outline-dark border-0 text-white">Checkout</a>
+                </div>
             </div>
 
-            <!-- Continue Shopping Prompt -->
+            <!-- Empty Basket Alert -->
             {% else %}
             <div class="alert alert-dark mt-2" role="alert">
                 <span class="fs-5">Your basket is empty.</span>
                 <div class="justify-content-end d-flex mt-2">
-                    <a href="{% url 'products' %}"
-                        class="btn bg-red btn-outline-dark border-0 text-white d-block">Continue
+                    <a href="{% url 'products' %}" class="btn bg-red btn-outline-dark border-0 text-white d-block">Keep
                         Shopping</a>
                 </div>
             </div>

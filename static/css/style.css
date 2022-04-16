@@ -75,3 +75,10 @@ footer {
 .border-gry {
     border: 1px solid rgba(0, 0, 0, .125);
 }
+
+
+/* Basket */
+
+.basket-img {
+    max-height: 125px;
+}
