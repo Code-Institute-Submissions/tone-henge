@@ -32,6 +32,7 @@
                         <td class="">
                             {{ item.product.name }}
                         </td>
+
                         <td class="text-center">
                             <!-- Update Quantity -->
                             <form action="" method="POST" class="form text-center d-inline">
@@ -41,11 +42,35 @@
                                 <button type="button" class="btn btn-sm btn-outline-success mt-2">Update</button>
                             </form>
 
-                            <!-- Remove Item -->
-                            <form action="" method="POST" class="form text-center d-inline">
-                                <button type="button" class="btn btn-sm btn-outline-danger mt-2">Remove</button>
-                            </form>
+                            <button type="button" class="btn btn-sm btn-outline-danger mt-2" data-bs-toggle="modal"
+                                data-bs-target="#modal-remove">Remove</button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="modal-remove" tabindex="-1" aria-labelledby="label-remove"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="label-remove">Remove Item</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Are you sure you want to remove this item from your basket?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-outline-dark"
+                                                data-bs-dismiss="modal">Cancel</button>
+                                            <form action="" method="POST">
+                                                {% csrf_token %}
+                                                <button type="submit" class="btn btn-outline-danger">Remove</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </td>
+
                         <td class="text-center">
                             £{{ item.product.price }}
                         </td>
