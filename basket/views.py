@@ -28,3 +28,13 @@ def remove_from_basket(request, product_id):
         request.session['basket'] = basket
 
         return redirect('basket')
+
+
+def adjust_quantity(request, product_id):
+    if request.method == 'POST':
+        basket = request.session.get('basket', {})
+        new_quantity = request.POST['quantity']
+        basket[product_id] = int(new_quantity)
+        request.session['basket'] = basket
+
+        return redirect('basket')
