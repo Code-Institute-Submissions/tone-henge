@@ -63,7 +63,7 @@
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-outline-dark"
                                                 data-bs-dismiss="modal">Cancel</button>
-                                            <form action="" method="POST">
+                                            <form action="{% url 'remove_from_basket' item.product.id %}" method="POST">
                                                 {% csrf_token %}
                                                 <button type="submit" class="btn btn-outline-danger">Remove</button>
                                             </form>
