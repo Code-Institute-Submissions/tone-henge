@@ -32,10 +32,21 @@
                         <td class="">
                             {{ item.product.name }}
                         </td>
-                        <td>
-                            {{ item.quantity }}
+                        <td class="text-center">
+                            <!-- Update Quantity -->
+                            <form action="" method="POST" class="form text-center d-inline">
+                                {% csrf_token %}
+                                <input name="quantity" type="number" class="form-control" value="{{ item.quantity }}"
+                                    min="1" max="99">
+                                <button type="button" class="btn btn-sm btn-outline-success mt-2">Update</button>
+                            </form>
+
+                            <!-- Remove Item -->
+                            <form action="" method="POST" class="form text-center d-inline">
+                                <button type="button" class="btn btn-sm btn-outline-danger mt-2">Remove</button>
+                            </form>
                         </td>
-                        <td>
+                        <td class="text-center">
                             £{{ item.product.price }}
                         </td>
                     </tr>
