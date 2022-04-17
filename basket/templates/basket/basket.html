@@ -26,6 +26,7 @@
                 <tbody>
                     {% for item in basket_items %}
                     <tr>
+                        <!-- Order Details -->
                         <td>
                             <img class="img-fluid basket-img" src="{{ item.product.image.url }}" alt="product image">
                         </td>
@@ -42,6 +43,7 @@
                                 <button type="button" class="btn btn-sm btn-outline-success mt-2">Update</button>
                             </form>
 
+                            <!-- Modal Trigger -->
                             <button type="button" class="btn btn-sm btn-outline-danger mt-2" data-bs-toggle="modal"
                                 data-bs-target="#modal-remove">Remove</button>
 
@@ -71,6 +73,7 @@
                             </div>
                         </td>
 
+                        <!-- Price -->
                         <td class="text-center">
                             £{{ item.product.price }}
                         </td>
