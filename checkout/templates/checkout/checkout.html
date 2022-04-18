@@ -3,7 +3,6 @@
 
 {% block content %}
 <div class="content-container mt-2">
-
     <div class="row g-0 justify-content-center">
         <!-- Order Recap -->
         <div class="col-10 col-md-5 col-lg-4 me-md-5 mt-2">
@@ -54,6 +53,8 @@
                 <!-- Stripe Element -->
                 <label for="card-element">Card Details*:</label>
                 <div id="card-element" class="form-control"></div>
+
+                <div id="card-error" class="mt-1 text-danger"></div>
 
                 <div class="text-end mt-2">
                     <a href="{% url 'basket' %}" class="btn btn-outline-dark">Change Basket</a>

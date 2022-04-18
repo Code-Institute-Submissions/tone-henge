@@ -22,3 +22,12 @@ const style = {
 };
 const card = elements.create("card", { style: style });
 card.mount("#card-element");
+
+// Handle validation errors in card element
+card.on("change", function (event) {
+    alertIcon = '<i class="fas fa-exclamation-circle"></i>';
+    message = `<span>${alertIcon}</span> ${event.error.message}`;
+    document.querySelector("#card-error").innerHTML = event.error
+        ? message
+        : "";
+});
