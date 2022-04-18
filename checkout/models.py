@@ -28,7 +28,7 @@ class Order(models.Model):
 
     def save(self, *args, **kwargs):
         if not self.order_id:
-            self.order_id = self._generate_order_number()
+            self.order_id = self._generate_order_id()
         super().save(*args, **kwargs)
 
     def __str__(self):
