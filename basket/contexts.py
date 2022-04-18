@@ -2,6 +2,8 @@ from products.models import Product
 
 
 def basket_contents(request):
+    """Return basket information to template."""
+
     basket_items = []
     total = 0
     product_count = 0
