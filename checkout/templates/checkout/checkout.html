@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
 <div class="content-container mt-2">
 
     <div class="row g-0 justify-content-center">
@@ -45,13 +44,17 @@
         </div>
 
         <!-- Details Form -->
-        <div class="col-10 col-md-5 mt-2">
+        <div class="col-10 col-md-5 mt-2 mb-3">
             <h2 class="fs-3">Delivery Details</h2>
             <form action="" method="POST" class="form">
                 {{ form.as_p }}
+                <div class="text-end">
+                    <a href="{% url 'basket' %}" class="btn btn-outline-dark">Change Basket</a>
+                    <button type="submit" class="btn bg-red btn-outline-dark border-0 text-white">Complete
+                        Order</button>
+                </div>
             </form>
         </div>
     </div>
 </div>
-
 {% endblock content %}
