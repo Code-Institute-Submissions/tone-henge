@@ -23,7 +23,7 @@ class Order(models.Model):
 
     def update_total(self):
         self.total = self.lineitems.aggregate(Sum('lineitem_total'))[
-            'lineitem_total__sum']
+            'lineitem_total__sum'] or 0
         self.save()
 
     def save(self, *args, **kwargs):

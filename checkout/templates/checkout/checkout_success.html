@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="content-container">
+    <div class="row g-0 justify-content-center mt-3">
+        <div class="col-10">
+            <h1>Thank you for your order.</h1>
+            <hr>
+            <p>Review your order details below. A confirmation email has been sent to {{ order.email }}.</p>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}

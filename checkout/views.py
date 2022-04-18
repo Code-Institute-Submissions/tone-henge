@@ -1,7 +1,7 @@
 from django.shortcuts import redirect, render
 from django.conf import settings
 from .forms import OrderForm
-from .models import OrderLineItem
+from .models import OrderLineItem, Order
 from products.models import Product
 from basket.contexts import basket_contents
 import stripe
@@ -29,7 +29,7 @@ def checkout(request):
                 )
                 order_line_item.save()
 
-            return redirect('home')
+            return redirect('checkout_success', order.order_id)
         else:
             form = OrderForm()
 
@@ -50,3 +50,16 @@ def checkout(request):
     }
 
     return render(request, 'checkout/checkout.html', context)
+
+
+def checkout_success(request, order_id):
+    """Render template with order details after successful checkout."""
+
+    order = Order.objects.get(order_id=order_id)
+
+    if 'basket' in request.session:
+        del request.session['basket']
+
+    context = {'order': order, }
+
+    return render(request, 'checkout/checkout_success.html', context)
