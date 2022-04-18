@@ -86,3 +86,7 @@ footer {
 .checkout-img {
     max-height: 50px;
 }
+
+.StripeElement {
+    line-height: 2rem;
+}

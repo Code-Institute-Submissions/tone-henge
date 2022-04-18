@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 <div class="content-container mt-2">
@@ -47,8 +48,14 @@
         <div class="col-10 col-md-5 mt-2 mb-3">
             <h2 class="fs-3">Delivery Details</h2>
             <form action="" method="POST" class="form">
+                {% csrf_token %}
                 {{ form.as_p }}
-                <div class="text-end">
+
+                <!-- Stripe Element -->
+                <label for="card-element">Card Details*:</label>
+                <div id="card-element" class="form-control"></div>
+
+                <div class="text-end mt-2">
                     <a href="{% url 'basket' %}" class="btn btn-outline-dark">Change Basket</a>
                     <button type="submit" class="btn bg-red btn-outline-dark border-0 text-white">Complete
                         Order</button>
@@ -58,3 +65,9 @@
     </div>
 </div>
 {% endblock content %}
+
+{% block extrajs %}
+{{ stripe_public_key | json_script:"stripe_public_key" }}
+{{ client_secret | json_script:"client_secret" }}
+<script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
+{% endblock extrajs %}
