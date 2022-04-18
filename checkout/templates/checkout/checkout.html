@@ -2,8 +2,56 @@
 
 {% block content %}
 
-<div class="content-container">
-    <h1>test render</h1>
+<div class="content-container mt-2">
+
+    <div class="row g-0 justify-content-center">
+        <!-- Order Recap -->
+        <div class="col-10 col-md-5 col-lg-4 me-md-5 mt-2">
+            <h1 class="fs-3">Order Recap</h1>
+            <table class="table table-striped rounded align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">Order Details</th>
+                        <th scope="col"></th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Price p/Item</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for item in basket_items %}
+                    <tr>
+                        <!-- Order Details -->
+                        <td>
+                            <img class="img-fluid checkout-img" src="{{ item.product.image.url }}" alt="product image">
+                        </td>
+                        <td class="">
+                            {{ item.product.name }}
+                        </td>
+
+                        <!-- Quantity -->
+                        <td class="text-center">
+                            {{ item.quantity }}
+                        </td>
+
+                        <!-- Price -->
+                        <td class="text-center">
+                            £{{ item.product.price }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Details Form -->
+        <div class="col-10 col-md-5 mt-2">
+            <h2 class="fs-3">Delivery Details</h2>
+            <form action="" method="POST" class="form">
+                {{ form.as_p }}
+            </form>
+        </div>
+    </div>
 </div>
 
 {% endblock content %}
