@@ -3,6 +3,8 @@ from .forms import OrderForm
 
 
 def checkout(request):
+    """Render checkout template."""
+
     basket = request.session.get('basket', {})
     form = OrderForm()
 

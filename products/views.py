@@ -4,6 +4,10 @@ from .models import Product
 
 
 def products(request):
+    """
+    Display list of products. Handle sorting method found in URL parameters.
+    """
+
     products = Product.objects.all()
     search_term = None
     sort_method = None
@@ -43,6 +47,10 @@ def products(request):
 
 
 def product_view(request, product_id):
+    """
+    Render product view template.
+    """
+
     product = Product.objects.get(id=product_id)
 
     context = {'product': product, }
