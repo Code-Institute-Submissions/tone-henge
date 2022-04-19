@@ -3,11 +3,59 @@
 {% block content %}
 
 <div class="content-container">
+    <!-- Header -->
     <div class="row g-0 justify-content-center mt-3">
         <div class="col-10">
             <h1>Thank you for your order.</h1>
+            <p>Review your order details below. A confirmation email has been sent to
+                <strong>{{ order.email }}</strong>.</p>
             <hr>
-            <p>Review your order details below. A confirmation email has been sent to {{ order.email }}.</p>
+        </div>
+    </div>
+
+    <!-- Order Details -->
+    <div class="row g-0 justify-content-center mt-2">
+        <div class="col-10 col-lg-6">
+            <h2 class="fs-3">Order</h2>
+            <table class="table table-striped rounded align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">Order Details</th>
+                        <th scope="col"></th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Price p/Item</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for item in order.lineitems.all %}
+                    <tr>
+                        <!-- Line Item Details -->
+                        <td>
+                            <img class="img-fluid checkout-img" src="{{ item.product.image.url }}" alt="product image">
+                        </td>
+                        <td class="">
+                            {{ item.product.name }}
+                        </td>
+
+                        <!-- Quantity -->
+                        <td class="text-center">
+                            {{ item.quantity }}
+                        </td>
+
+                        <!-- Price -->
+                        <td class="text-center">
+                            £{{ item.product.price }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <!-- Total -->
+            <div class="d-flex justify-content-end">
+                <span class="fs-5">Total Paid: £{{ order.total }}</span>
+            </div>
         </div>
     </div>
 </div>
