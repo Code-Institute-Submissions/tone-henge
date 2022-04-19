@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<div class="content-container">
+<div class="content-container mb-3">
     <!-- Header -->
     <div class="row g-0 justify-content-center mt-3">
         <div class="col-10">
@@ -10,14 +10,45 @@
             <p>Review your order details below. A confirmation email has been sent to
                 <strong>{{ order.email }}</strong>.</p>
             <hr>
+            <p>Your order number: <strong>{{ order.order_id }}</strong></p>
+            <hr>
+        </div>
+    </div>
+
+    <!-- Customer Details -->
+    <div class="row g-0 justify-content-center mt-2">
+        <div class="col-10 col-lg-6">
+            <h2 class="fs-3">Customer Details:</h2>
+            <table class="table">
+                <thead class="table-dark">
+                    <tr>
+                        <th class="scope">Customer Details</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Name: {{ order.name }}</td>
+                    </tr>
+                    <tr>
+                        <td>Email: {{ order.email }}</td>
+                    </tr>
+                    <tr>
+                        <td>Phone: {{ order.phone_id }}</td>
+                    </tr>
+                    <tr>
+                        <td>Address: {{ order.address }}</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 
     <!-- Order Details -->
     <div class="row g-0 justify-content-center mt-2">
         <div class="col-10 col-lg-6">
-            <h2 class="fs-3">Order</h2>
-            <table class="table table-striped rounded align-middle">
+            <h2 class="fs-3">Order:</h2>
+            <table class="table table-striped align-middle">
                 <thead class="table-dark">
                     <tr>
                         <th scope="col">Order Details</th>
