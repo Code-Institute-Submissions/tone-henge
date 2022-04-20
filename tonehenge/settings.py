@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
+from django.contrib.messages import constants as messages
 from pathlib import Path
 import dj_database_url
 import os
@@ -192,3 +193,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STRIPE_CURRENCY = 'gbp'
 STRIPE_PUBLIC_KEY = os.environ['STRIPE_PUBLIC_KEY']
 STRIPE_PRIVATE_KEY = os.environ['STRIPE_PRIVATE_KEY']
+
+# Messages
+MESSAGE_TAGS = {
+    messages.WARNING: 'danger',
+}
