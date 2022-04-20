@@ -192,4 +192,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STRIPE_CURRENCY = 'gbp'
 STRIPE_PUBLIC_KEY = os.environ['STRIPE_PUBLIC_KEY']
 STRIPE_PRIVATE_KEY = os.environ['STRIPE_PRIVATE_KEY']
-WH_SECRET = os.environ['WH_SECRET']
