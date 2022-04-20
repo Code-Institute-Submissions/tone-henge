@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib import messages
 
 
 def basket(request):
@@ -16,6 +17,12 @@ def add_to_basket(request, product_id):
         url = request.POST['redirect_url']
 
         if product_id in basket:
+
+            if basket[product_id] + quantity > 99:
+                messages.add_message(
+                    request, messages.WARNING, f'Quantity in basket already too high! You can only add {99 - basket[product_id]} more of this item.')
+                return redirect(url)
+
             basket[product_id] += quantity
         else:
             basket[product_id] = quantity
