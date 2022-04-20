@@ -46,11 +46,11 @@
 
                             <!-- Modal Trigger -->
                             <button type="button" class="btn btn-sm btn-outline-danger mt-2" data-bs-toggle="modal"
-                                data-bs-target="#modal-remove">Remove</button>
+                                data-bs-target="#modal-remove-{{ item.product.id }}">Remove</button>
 
                             <!-- Modal -->
-                            <div class="modal fade" id="modal-remove" tabindex="-1" aria-labelledby="label-remove"
-                                aria-hidden="true">
+                            <div class="modal fade" id="modal-remove-{{ item.product.id }}" tabindex="-1"
+                                aria-labelledby="label-remove" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
