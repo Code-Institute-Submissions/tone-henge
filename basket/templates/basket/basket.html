@@ -102,5 +102,19 @@
             {% endif %}
         </div>
     </div>
+
+    <!-- Messages -->
+    {% if messages %}
+    {% for message in messages %}
+    <div class="row g-0 justify-content-center mt-2">
+        <div class="col-10 col-md-6">
+            <div class="alert alert-dismissible fade show alert-{{ message.tags }}">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    {% endif %}
 </div>
 {% endblock content %}

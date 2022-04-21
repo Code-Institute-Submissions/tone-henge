@@ -39,6 +39,9 @@ def add_to_basket(request, product_id):
 
         request.session['basket'] = basket
 
+        messages.add_message(request, messages.SUCCESS,
+                             f'Added {quantity} to basket.')
+
         return redirect(url)
 
 
@@ -49,6 +52,9 @@ def remove_from_basket(request, product_id):
         basket = request.session.get('basket', {})
         basket.pop(product_id)
         request.session['basket'] = basket
+
+        messages.add_message(request, messages.SUCCESS,
+                             'Successfully removed from basket.')
 
         return redirect('basket')
 
@@ -61,5 +67,8 @@ def adjust_quantity(request, product_id):
         new_quantity = request.POST['quantity']
         basket[product_id] = int(new_quantity)
         request.session['basket'] = basket
+
+        messages.add_message(request, messages.SUCCESS,
+                             'Quantity updated successfully.')
 
         return redirect('basket')
