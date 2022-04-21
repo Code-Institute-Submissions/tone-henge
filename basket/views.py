@@ -9,7 +9,10 @@ def basket(request):
 
 
 def add_to_basket(request, product_id):
-    """Add certain quantity of an item to basket."""
+    """
+    Add specified quantity of an item to basket, checking that 
+    the max quantity has not been reached.
+    """
 
     if request.method == 'POST':
         quantity = int(request.POST['quantity'])
@@ -19,8 +22,15 @@ def add_to_basket(request, product_id):
         if product_id in basket:
 
             if basket[product_id] + quantity > 99:
+                if basket[product_id] == 99:
+                    messages.add_message(
+                        request, messages.WARNING, 'Max quantity reached.')
+
+                    return redirect(url)
+
                 messages.add_message(
-                    request, messages.WARNING, f'Quantity in basket already too high! You can only add {99 - basket[product_id]} more of this item.')
+                    request, messages.WARNING, f'Quantity in basket already too high. You can only add {99 - basket[product_id]} more of this item.')
+
                 return redirect(url)
 
             basket[product_id] += quantity
