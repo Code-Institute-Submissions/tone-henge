@@ -1,4 +1,4 @@
-from django.shortcuts import redirect, render
+from django.shortcuts import redirect, render, get_object_or_404
 from django.conf import settings
 from .forms import OrderForm
 from .models import OrderLineItem, Order
@@ -21,7 +21,7 @@ def checkout(request):
             order = form.save()
 
             for product_id, quantity in basket.items():
-                product = Product.objects.get(pk=product_id)
+                product = get_object_or_404(Product, pk=product_id)
                 order_line_item = OrderLineItem(
                     order=order,
                     product=product,
@@ -55,7 +55,7 @@ def checkout(request):
 def checkout_success(request, order_id):
     """Render template with order details after successful checkout."""
 
-    order = Order.objects.get(order_id=order_id)
+    order = get_object_or_404(Order, order_id=order_id)
 
     if 'basket' in request.session:
         del request.session['basket']

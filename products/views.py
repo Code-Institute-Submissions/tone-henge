@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.db.models import Q
 from .models import Product
 
@@ -51,7 +51,7 @@ def product_view(request, product_id):
     Render product view template.
     """
 
-    product = Product.objects.get(id=product_id)
+    product = get_object_or_404(Product, pk=product_id)
 
     context = {'product': product, }
 
