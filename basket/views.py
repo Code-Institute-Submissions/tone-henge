@@ -35,6 +35,12 @@ def add_to_basket(request, product_id):
 
             basket[product_id] += quantity
         else:
+            if quantity > 99 or quantity < 1:
+                messages.add_message(
+                    request, messages.WARNING, 'You may only add 1-99 of a product to your basket.')
+
+                return redirect(url)
+
             basket[product_id] = quantity
 
         request.session['basket'] = basket
@@ -60,11 +66,21 @@ def remove_from_basket(request, product_id):
 
 
 def adjust_quantity(request, product_id):
-    """Update the quantity of an item currently in basket."""
+    """
+    Update the quantity of an item currently in basket, ensuring
+    the new quantity is within the allowed limit.
+    """
 
     if request.method == 'POST':
         basket = request.session.get('basket', {})
         new_quantity = request.POST['quantity']
+
+        if new_quantity > 99 or new_quantity < 1:
+            messages.add_message(
+                request, messages.WARNING, 'You may only add 1-99 of a product to your basket.')
+
+            return redirect('basket')
+
         basket[product_id] = int(new_quantity)
         request.session['basket'] = basket
 
