@@ -16,6 +16,10 @@ This sheet is used for mapping user stories to features and epics throughout dev
 
 Testing information can be found in [this dedicated document](readme/testing/TESTING.md).
 
+## Marketing
+
+-   [View Facebook business page mockup.](/readme/marketing/facebook.pdf)
+
 ## Credit
 
 Credit to [Ian Lunn](https://github.com/IanLunn/) for the code I used to animate the home page epic button.
