@@ -1,3 +1,6 @@
 from django.db import models
 
-# Create your models here.
+
+class UserQuery(models.Model):
+    email = models.EmailField()
+    query = models.TextField(max_length=300)
