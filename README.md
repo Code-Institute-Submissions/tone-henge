@@ -19,6 +19,7 @@ Testing information can be found in [this dedicated document](readme/testing/TES
 ## Marketing
 
 -   [View Facebook business page mockup.](/readme/marketing/facebook.pdf)
+-   A Mailchimp embedded newsletter form has been included.
 
 ## Credit
 
