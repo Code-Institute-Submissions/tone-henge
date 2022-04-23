@@ -23,4 +23,4 @@ Testing information can be found in [this dedicated document](readme/testing/TES
 
 ## Credit
 
-Credit to [Ian Lunn](https://github.com/IanLunn/) for the code I used to animate the home page epic button.
+Credit to [Ian Lunn](https://github.com/IanLunn/) for the code I used to animate the home page hero image button.
