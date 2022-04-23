@@ -67,6 +67,19 @@
         </div>
     </div>
 
+    {% for comment in comments %}
+    <div class="row g-0 justify-content-center">
+        <div class="col-10 col-md-8 col-lg-6">
+            <div class="bg-dark p-2 rounded text-white">
+                <p class="text-break">{{ comment.content }}</p>
+                <span class="fst-italic">by {{ comment.author }} - {{ comment.date }}</span>
+            </div>
+
+            <hr>
+        </div>
+    </div>
+    {% endfor %}
+
     <!-- Comment Modal -->
     <div class="modal fade" id="comment-modal" tabindex="-1" aria-labelledby="comment-modal-label" aria-hidden="true">
         <div class="modal-dialog">

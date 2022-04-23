@@ -2,7 +2,7 @@ from xml.etree.ElementTree import Comment
 from django.shortcuts import render, get_object_or_404
 from django.db.models import Q
 from .models import Product
-from comments.forms import CommentForm
+from comments.forms import CommentForm, Comment
 
 
 def products(request):
@@ -50,12 +50,13 @@ def products(request):
 
 def product_view(request, product_id):
     """
-    Render product view template.
+    Render product view template & product comments.
     """
 
     product = get_object_or_404(Product, pk=product_id)
     form = CommentForm()
+    comments = Comment.objects.all()
 
-    context = {'product': product, 'form': form, }
+    context = {'product': product, 'form': form, 'comments': comments, }
 
     return render(request, 'products/product_view.html', context)
