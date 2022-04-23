@@ -6,8 +6,6 @@ from django.contrib import messages
 def contact(request):
     """Render contact page and handle form submission for user queries."""
 
-    form = UserQueryForm()
-
     if request.method == 'POST':
         form = UserQueryForm(request.POST)
 
@@ -17,6 +15,10 @@ def contact(request):
                 request, messages.SUCCESS, 'Thank you. Your query has been sent successfully.')
 
             return redirect('contact')
+
+    form = UserQueryForm()
+    if request.user.is_authenticated:
+        form = UserQueryForm(initial={'email': request.user.email})
 
     context = {'form': form, }
 
