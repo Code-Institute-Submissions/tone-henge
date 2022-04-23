@@ -55,8 +55,7 @@ def product_view(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
     form = CommentForm()
-    comments = Comment.objects.all()
 
-    context = {'product': product, 'form': form, 'comments': comments, }
+    context = {'product': product, 'form': form, }
 
     return render(request, 'products/product_view.html', context)
