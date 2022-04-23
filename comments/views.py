@@ -20,6 +20,12 @@ def add_comment(request, product_id):
 
             return redirect('product_view', product_id)
 
+        if len(request.POST['content']) > 500:
+            messages.add_message(request, messages.WARNING,
+                                 'Comment cannot exceed 500 characters.')
+
+            return redirect('product_view', product_id)
+
     messages.add_message(request, messages.WARNING,
                          'Error. Something went wrong with your request.')
     return redirect('home')
