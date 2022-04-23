@@ -1,3 +1,7 @@
 from django.contrib import admin
+from .models import UserQuery
 
-# Register your models here.
+
+@admin.register(UserQuery)
+class UserQueryAdmin(admin.ModelAdmin):
+    search_fields = ['email']
