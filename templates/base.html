@@ -190,27 +190,6 @@
             </div>
         </div>
 
-        <!-- Contact Modal -->
-        <div class="modal fade" id="contact-modal" tabindex="-1" aria-labelledby="contact-modal-label"
-            aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="contact-modal-label">Any queries?</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <span class="d-block">Leave them below and we'll get back to you.</span>
-                        {% comment %} form goes here {% endcomment %}
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Submit</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <!-- Page Content -->
         {% block content %}
         {% endblock content %}
@@ -228,11 +207,8 @@
             </ul>
 
             <ul class="list-inline text-white">
-                <li class="list-inline-item align-bottom"><button
-                        class="btn btn-link text-decoration-none text-white p-0 border-0 shadow-none"
-                        data-bs-toggle="modal" data-bs-target="#contact-modal">Contact Us
-                        |</button>
-                </li>
+                <li class="list-inline-item"><a href="{% url 'contact' %}"
+                        class="text-decoration-none text-white">Contact Us</a> |</li>
                 <li class="list-inline-item align-bottom"><button
                         class="btn btn-link text-decoration-none text-white p-0 border-0 shadow-none"
                         data-bs-toggle="modal" data-bs-target="#mc-modal">Subscribe
