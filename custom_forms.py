@@ -1,5 +1,6 @@
 from allauth.account.forms import LoginForm, SignupForm
 
+
 class CustomLoginForm(LoginForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -14,3 +15,4 @@ class CustomSignupForm(SignupForm):
 
         for field in self.fields:
             self.fields[field].widget.attrs.update({'class': 'form-control'})
+            self.fields[field].label += '*'
