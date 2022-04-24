@@ -1,13 +1,49 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
 <div class="content-container">
-    <div class="row g-0 justify-content-center">
-        <div class="col-10 text-center">
-            <h1>Test render</h1>
+    <div class="row g-0 justify-content-center mt-3">
+        <div class="col-10 col-md-9 col-lg-7 text-center">
+            <h1>Your Wishlist</h1>
+            <hr>
+
+            <!-- Wishlist Items -->
+            <table class="table table-striped rounded align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">Item Details</th>
+                        <th scope="col"></th>
+                        <th scope="col">Price</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for item in user.wishlist.all %}
+                    <tr>
+                        <!-- Item Details -->
+                        <td>
+                            <img class="img-fluid wishlist-img" src="{{ item.product.image.url }}" alt="product image">
+                        </td>
+                        <td>
+                            {{ item.product.name }}
+                        </td>
+
+                        <!-- Price -->
+                        <td class="text-center">
+                            £{{ item.product.price }}
+                        </td>
+
+                        <!-- View Product -->
+                        <td class="text-center">
+                            <a href="{% url 'product_view' item.product.id %}"
+                                class="btn bg-red btn-outline-dark border-0 text-white">View item</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
-
 {% endblock content %}

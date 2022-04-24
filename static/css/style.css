@@ -100,3 +100,8 @@ footer {
 .StripeElement {
     line-height: 2rem;
 }
+
+/* Wishlist */
+.wishlist-img {
+    max-height: 75px;
+}
