@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="content-container">
+    <div class="row g-0 justify-content-center mt-3 mb-2">
+        <div class="col-10 col-md-8 col-lg-6">
+            <h1>Update comment...</h1>
+            <hr>
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div class="text-end">
+                    <a href="{% url 'product_view' product_id %}" class="btn btn-secondary border-0">Cancel</a>
+                    <button type="submit" class="btn bg-red btn-outline-dark border-0 text-white">Confirm</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}
