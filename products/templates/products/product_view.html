@@ -113,6 +113,7 @@
                                     {% csrf_token %}
                                     <button type="submit"
                                         class="btn bg-red btn-outline-dark border-0 text-white">Delete</button>
+                                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                 </form>
                             </div>
                         </div>
