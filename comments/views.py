@@ -15,7 +15,7 @@ def add_comment(request, product_id):
         if form.is_valid():
             form = form.save(commit=False)
             form.author = request.user
-            form.product = Product.objects.get(pk=product_id)
+            form.product = get_object_or_404(Product, pk=product_id)
             form.save()
 
             return redirect('product_view', product_id)
