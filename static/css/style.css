@@ -18,6 +18,12 @@
     background-color: #dc3545;
 }
 
+#user-status:hover,
+#user-status:focus {
+    background-color: transparent;
+    color: #212529;
+}
+
 .content-container {
     padding-bottom: 100px;
 }
