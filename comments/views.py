@@ -1,4 +1,4 @@
-from django.shortcuts import redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .forms import CommentForm, Comment
@@ -28,6 +28,7 @@ def add_comment(request, product_id):
 
     messages.add_message(request, messages.WARNING,
                          'Error. Something went wrong with your request.')
+
     return redirect('home')
 
 
@@ -44,6 +45,41 @@ def delete_comment(request, comment_id):
             messages.add_message(request, messages.SUCCESS, 'Comment deleted.')
 
             return redirect(url)
+
+    messages.add_message(request, messages.WARNING,
+                         'Error. Something went wrong with your request.')
+
+    return redirect('home')
+
+
+@login_required
+def update_comment(request, product_id, comment_id):
+    """Edit comment on specific post. Ensures user is auth'd to do so."""
+
+    comment = get_object_or_404(Comment, pk=comment_id)
+
+    if request.user == comment.author:
+        form = CommentForm(instance=comment)
+
+        if request.method == 'POST':
+            form = CommentForm(request.POST, instance=comment)
+
+            if form.is_valid():
+                form.save()
+                messages.add_message(
+                    request, messages.SUCCESS, 'Comment updated.')
+
+                return redirect('product_view', product_id)
+
+            if len(request.POST['content']) > 500:
+                messages.add_message(request, messages.WARNING,
+                                     'Comment cannot exceed 500 characters.')
+
+                return redirect('product_view', product_id)
+
+        context = {'form': form, 'product_id': product_id, }
+
+        return render(request, 'comments/update_comment.html', context)
 
     messages.add_message(request, messages.WARNING,
                          'Error. Something went wrong with your request.')

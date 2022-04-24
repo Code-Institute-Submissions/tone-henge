@@ -88,7 +88,8 @@
                 <!-- Editing/Deleting Comments -->
                 {% if user == comment.author %}
                 <div class="col text-end">
-                    <a href="#" class="me-1 text-white"><i class="fas fa-edit"></i></a>
+                    <a href="{% url 'update_comment' product.id comment.id %}" class="me-1 text-white"><i
+                            class="fas fa-edit"></i></a>
                     <i class="fas fa-trash" data-bs-toggle="modal"
                         data-bs-target="#comment-delete-{{ comment.id }}"></i>
                 </div>
