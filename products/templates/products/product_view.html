@@ -73,12 +73,28 @@
 
     {% for comment in product.comments.all %}
     <div class="row g-0 justify-content-center">
-        <div class="col-10 col-md-8 col-lg-6">
-            <div class="bg-dark p-2 rounded text-white">
-                <p class="text-break">{{ comment.content }}</p>
-                <span class="fst-italic">by {{ comment.author }} - {{ comment.date }}</span>
+        <div class="col-10 col-md-8 col-lg-7 bg-dark p-2 rounded text-white">
+            <div class="row g-0">
+                <div class="col-10">
+                    <p class="text-break">{{ comment.content }}</p>
+                </div>
             </div>
 
+            <div class="row g-0">
+                <div class="col-8">
+                    <span class="fst-italic">by {{ comment.author }} - {{ comment.date }}</span>
+                </div>
+
+                {% if user == comment.author %}
+                <div class="col text-end">
+                    <a href="#" class="me-1 text-white"><i class="fas fa-edit"></i></a>
+                    <a href="#" class="text-white"><i class="fas fa-trash"></i></a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="col-10 col-md-8 col-lg-7">
             <hr>
         </div>
     </div>
