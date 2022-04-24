@@ -77,6 +77,10 @@ footer {
 }
 
 
+.fa-trash:hover {
+    cursor: pointer;
+}
+
 /* Basket */
 .basket-img {
     max-height: 125px;
