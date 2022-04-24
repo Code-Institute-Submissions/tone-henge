@@ -11,7 +11,16 @@
         <!-- Details -->
         <div class="col-11 col-md-10 col-lg-4 text-center mb-3">
             <h1>{{ product.name }}</h1>
-            <span class="d-block fs-3 fst-italic">£{{ product.price }}</span>
+            <span class=" fs-3 fst-italic">£{{ product.price }}</span>
+
+            <!-- Add to Wishlist -->
+            {% if user.is_authenticated %}
+            <form action="{% url 'add_to_wishlist' product.id %}" method="POST" class="text-end">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-sm btn-outline-dark">Add to wishlist</button>
+            </form>
+            {% endif %}
+
             <hr>
             <span class="d-block mt-3 text-start fw-bold">Description:</span>
             <p class="text-start">{{ product.content }}</p>
