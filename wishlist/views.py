@@ -16,21 +16,34 @@ def wishlist(request):
 def add_to_wishlist(request, product_id):
     """Add item to user's wishlist."""
 
-    product = get_object_or_404(Product, pk=product_id)
-    wishlist_item = WishlistItem(user=request.user, product=product)
-    wishlist_item.save()
+    if request.method == 'POST':
+        product = get_object_or_404(Product, pk=product_id)
+        wishlist_item = WishlistItem(user=request.user, product=product)
+        wishlist_item.save()
 
-    messages.add_message(request, messages.SUCCESS, 'Added to wishlist.')
-    return redirect('product_view', product_id)
+        messages.add_message(request, messages.SUCCESS, 'Added to wishlist.')
+        return redirect('product_view', product_id)
+
+    messages.add_message(request, messages.WARNING,
+                         'Error. Something went wrong with your request.')
+
+    return redirect('home')
 
 
 @login_required
 def remove_from_wishlist(request, product_id):
     """Remove item from user's wishlist"""
 
-    product = get_object_or_404(Product, pk=product_id)
-    wishlist_item = request.user.wishlist.get(product=product)
-    wishlist_item.delete()
+    if request.method == 'POST':
+        product = get_object_or_404(Product, pk=product_id)
+        wishlist_item = request.user.wishlist.get(product=product)
+        wishlist_item.delete()
 
-    messages.add_message(request, messages.SUCCESS, 'Removed from wishlist.')
-    return redirect('product_view', product_id)
+        messages.add_message(request, messages.SUCCESS,
+                             'Removed from wishlist.')
+        return redirect('product_view', product_id)
+
+    messages.add_message(request, messages.WARNING,
+                         'Error. Something went wrong with your request.')
+
+    return redirect('home')
