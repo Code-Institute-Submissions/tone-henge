@@ -54,7 +54,10 @@ def product_view(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
     form = CommentForm()
-    on_wishlist = request.user.wishlist.all().filter(product=product).exists()
+    on_wishlist = False
+
+    if request.user.is_authenticated:
+        on_wishlist = request.user.wishlist.all().filter(product=product).exists()
 
     context = {'product': product, 'form': form, 'on_wishlist': on_wishlist, }
 
