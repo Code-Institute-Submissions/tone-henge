@@ -1,8 +1,7 @@
-from xml.etree.ElementTree import Comment
 from django.shortcuts import render, get_object_or_404
 from django.db.models import Q
 from .models import Product
-from comments.forms import CommentForm, Comment
+from comments.forms import CommentForm
 
 
 def products(request):
