@@ -7,6 +7,20 @@
             <h1>Your Wishlist</h1>
             <hr>
 
+            <!-- Messages -->
+            {% if messages %}
+            {% for message in messages %}
+            <div class="row g-0 justify-content-center mt-2">
+                <div class="col-10 col-md-6">
+                    <div class="alert alert-dismissible fade show alert-{{ message.tags }}">
+                        {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% endif %}
+
             <!-- Wishlist Items -->
             <table class="table table-striped rounded align-middle">
                 <thead class="table-dark">
@@ -43,6 +57,7 @@
                                 {% csrf_token %}
                                 <button type="submit" class="btn btn-sm btn-outline-danger"><i
                                         class="fas fa-ban"></i></button>
+                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
                             </form>
                         </td>
                     </tr>

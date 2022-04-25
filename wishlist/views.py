@@ -35,13 +35,15 @@ def remove_from_wishlist(request, product_id):
     """Remove item from user's wishlist"""
 
     if request.method == 'POST':
+        url = request.POST['redirect_url']
+
         product = get_object_or_404(Product, pk=product_id)
         wishlist_item = request.user.wishlist.get(product=product)
         wishlist_item.delete()
 
         messages.add_message(request, messages.SUCCESS,
                              'Removed from wishlist.')
-        return redirect('product_view', product_id)
+        return redirect(url)
 
     messages.add_message(request, messages.WARNING,
                          'Error. Something went wrong with your request.')
