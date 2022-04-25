@@ -14,6 +14,12 @@ User stories are seen in the below table.
 
 This sheet is used for mapping user stories to features and epics throughout development. [It can be viewed here](https://docs.google.com/spreadsheets/d/1ob8nIBe4SKKu7h6s5SPkJSnqiatEzivwf0XZelbFMKs/edit?usp=sharing).
 
+## Database
+
+The schema diagram can be seen below.
+
+![database schema](readme/general/db_schema.png)
+
 ## Testing
 
 Testing information can be found in [this dedicated document](readme/testing/TESTING.md).
