@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://tone-henge.herokuapp.com/sitemap.xml
