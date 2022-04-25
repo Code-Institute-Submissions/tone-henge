@@ -52,15 +52,41 @@
 
                         <!-- Remove Product -->
                         <td class="text-center">
-                            <form action="{% url 'remove_from_wishlist' item.product.id %}" method="POST"
-                                class="text-end">
-                                {% csrf_token %}
-                                <button type="submit" class="btn btn-sm btn-outline-danger"><i
-                                        class="fas fa-ban"></i></button>
-                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                            </form>
+                            <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal"
+                                data-bs-target="#wishlist-remove-modal-{{ item.product.id }}">
+                                <i class="fas fa-ban"></i>
+                            </button>
                         </td>
                     </tr>
+
+                    <!-- Wishlist Remove Modal -->
+                    <div class="modal fade" id="wishlist-remove-modal-{{ item.product.id }}" tabindex="-1"
+                        aria-labelledby="wishlist-remove-label-{{ item.product.id }}" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="wishlist-remove-label-{{ item.product.id }}">Remove from
+                                        wishlist?</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Are you sure you want to remove this from your wishlist?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <form action="{% url 'remove_from_wishlist' item.product.id %}" method="POST"
+                                        class="text-end">
+                                        {% csrf_token %}
+                                        <button type="submit"
+                                            class="btn bg-red btn-outline-dark border-0 text-white">Confirm</button>
+                                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     {% endfor %}
                 </tbody>
             </table>
