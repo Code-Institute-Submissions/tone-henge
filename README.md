@@ -1,5 +1,7 @@
 # Tone Henge
 
+![home preview](readme/general/home.png)
+
 Tone Henge is a full-stack eCommerce project built using Django, Heroku and AWS.
 
 ## UX/UI
