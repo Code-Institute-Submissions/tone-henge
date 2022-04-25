@@ -26,7 +26,9 @@
                             <img class="img-fluid wishlist-img" src="{{ item.product.image.url }}" alt="product image">
                         </td>
                         <td>
-                            {{ item.product.name }}
+                            <a class="text-dark" href="{% url 'product_view' item.product.id %}">
+                                {{ item.product.name }}
+                            </a>
                         </td>
 
                         <!-- Price -->
@@ -34,10 +36,14 @@
                             £{{ item.product.price }}
                         </td>
 
-                        <!-- View Product -->
+                        <!-- Remove Product -->
                         <td class="text-center">
-                            <a href="{% url 'product_view' item.product.id %}"
-                                class="btn bg-red btn-outline-dark border-0 text-white">View item</a>
+                            <form action="{% url 'remove_from_wishlist' item.product.id %}" method="POST"
+                                class="text-end">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-sm btn-outline-danger"><i
+                                        class="fas fa-ban"></i></button>
+                            </form>
                         </td>
                     </tr>
                     {% endfor %}
