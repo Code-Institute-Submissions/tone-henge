@@ -22,3 +22,15 @@ def add_to_wishlist(request, product_id):
 
     messages.add_message(request, messages.SUCCESS, 'Added to wishlist.')
     return redirect('product_view', product_id)
+
+
+@login_required
+def remove_from_wishlist(request, product_id):
+    """Remove item from user's wishlist"""
+
+    product = get_object_or_404(Product, pk=product_id)
+    wishlist_item = request.user.wishlist.get(product=product)
+    wishlist_item.delete()
+
+    messages.add_message(request, messages.SUCCESS, 'Removed from wishlist.')
+    return redirect('product_view', product_id)

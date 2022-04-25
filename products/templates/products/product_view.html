@@ -16,7 +16,7 @@
             <!-- Add to/Remove from Wishlist -->
             {% if user.is_authenticated %}
             {% if on_wishlist %}
-            <form action="" method="POST" class="text-end">
+            <form action="{% url 'remove_from_wishlist' product.id %}" method="POST" class="text-end">
                 {% csrf_token %}
                 <button type="submit" class="btn btn-sm btn-outline-dark">Remove from Wishlist</button>
             </form>
