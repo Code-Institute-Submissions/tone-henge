@@ -27,6 +27,11 @@
                 <button type="submit" class="btn btn-sm btn-outline-dark">Add to Wishlist</button>
             </form>
             {% endif %}
+
+            {% else %}
+            <div class="text-end mt-1">
+                <span><a href="{% url 'account_login' %}">Sign in</a> to add to wishlist.</span>
+            </div>
             {% endif %}
 
             <hr>
