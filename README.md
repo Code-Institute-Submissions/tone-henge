@@ -14,7 +14,15 @@ User stories are seen in the below table.
 
 This sheet is used for mapping user stories to features and epics throughout development. [It can be viewed here](https://docs.google.com/spreadsheets/d/1ob8nIBe4SKKu7h6s5SPkJSnqiatEzivwf0XZelbFMKs/edit?usp=sharing).
 
+### Wireframes
+
 Wireframes assisted keeping to the basic design of the project. These also helped out map the UI in advance. These can be seen [here](readme/general/wireframes.pdf).
+
+### Typography / Colour Scheme
+
+Use of minimal, recurring fonts and colours enforces the brand's consistency across pages. The default font is Helvetica Neue. The font for the logo is bold and eye-catching. The choice for this was Righteous.
+
+The main colours used across the app are red (#dc3545), white (#fff) and a dark grey (#212529). These are consistent with Bootstrap styling for seamless integration.
 
 ## Database
 
