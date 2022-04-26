@@ -28,6 +28,56 @@ Use of minimal, recurring fonts and colours enforces the brand's consistency acr
 
 The main colours used across the app are red (#dc3545), white (#fff) and a dark grey (#212529). These are consistent with Bootstrap styling for seamless integration.
 
+## Features
+
+### Existing Features
+
+-   View Products.
+    -   Users are able to view a list of available products. Each product preview has a snippet of information about the item, and a 'details' prompt to view more.
+-   Product Details.
+    -   Each product has a dedicated page that displays a full description about the item. Users are offered further functionality from this page, e.g. 'add to basket'.
+-   View Basket Total.
+    -   The total cost of the user's basket is always in view at the top of the page.
+-   Filter Products.
+    -   Multiple filtering options are available, allowing the user to select their preferred format.
+-   Product Sorting.
+    -   Products can be sorted by category, allowing easy navigation to specific types of item.
+-   Product Search
+    -   A search bar is present in the navigation menu. This searches product names, descriptions and categories and returns a display of all the products that match the criteria.
+-   Search Count.
+    -   Users are always shown the amount of results being displayed.
+-   View Basket.
+    -   The basket icon is always available at the top of the navigation menu. Users can click this to access their basket, which will display the items they've added, and a total cost of these items. If empty, it will show a prompt to keep shopping.
+-   Adjust Basket Quantity.
+    -   Users are able to adjust the quantity of an item in their basket directly from the basket page.
+-   Enter Payment Details.
+    -   Users are able to click through to the checkout from their basket. From here they can enter their billing details.
+-   Make Payment.
+    -   Users can make payment using card details (cards will not be charged). This was handled using Stripe.
+-   Order Confirmation.
+    -   After successful payment, the user is redirected to an order confirmation page, where they are given a review of their order.
+-   Sign Up.
+    -   Non-authenticated users are able to sign up for an account. This action is available from the navigation account dropdown. There are also prompts across the site in place of content that requires authentication.
+-   Account Creation Email.
+    -   Users are sent confirmation emails with the details of their new account.
+-   Log In/Out
+    -   Authenticated users able to log in and out of their accounts from the main navigation. Logged in users are made aware of their authenticated status in the account navigation dropdown.
+-   Raise Query.
+    -   A contact link is displayed in the footer of the site at all times, which redirects users to a contact page.
+    -   These queries are available for admin users to review on a page only they can access.
+-   Comments
+    -   Authenticated users are able to leave reviews/comments underneath products. This can be used for discussion as well as advising on products.
+-   Wishlist
+    -   Authenticated users are able to add products to a wishlist, so they can come back and review them later. This page is accessible from the navigation account dropdown.
+-   Add Product
+    -   Admin users are able to add new products that will be rendered to the site.
+-   Edit / Delete Products
+    -   Admin users are able to edit/remove products to reflect stock changes.
+-   Newsletter
+    -   A link to a modal that prompts users to sign up to a newsletter is available from the footer across all pages. This is part of the marketing strategy noted in the sections further below.
+
+### Features to Implement in the Future
+
 ## Database
 
 The schema diagram can be seen below.
