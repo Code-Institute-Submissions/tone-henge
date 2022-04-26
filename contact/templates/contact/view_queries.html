@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
 <div class="content-container">
+    <!-- Header -->
     <div class="row g-0 justify-content-center mb-2 mt-3">
         <div class="col-10 col-md-8 text-center">
             <h1>Customer Queries</h1>
@@ -10,6 +10,7 @@
         </div>
     </div>
 
+    <!-- Customer Queries -->
     {% for query in queries %}
     <div class="row g-0 justify-content-center">
         <div class="col-10 col-md-8 col-lg-6 bg-dark p-2 rounded text-white">
@@ -36,5 +37,4 @@
     </div>
     {% endfor %}
 </div>
-
 {% endblock content %}

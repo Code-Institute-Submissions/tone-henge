@@ -37,7 +37,7 @@ def view_queries(request):
 
         return redirect('home')
 
-    queries = UserQuery.objects.all()
+    queries = reversed(UserQuery.objects.all())
     context = {'queries': queries, }
 
     return render(request, 'contact/view_queries.html', context)
