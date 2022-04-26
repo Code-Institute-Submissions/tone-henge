@@ -71,4 +71,23 @@ Users of the site are able to sign up to the newsletter on all pages across the 
 
 ## Credit
 
+Product descriptions have been taken from their respective official product page:
+
+-   Strandberg
+    -   https://strandbergguitars.com/eu/product/boden-prog-nx-6-plini-edition/
+-   Kiesel
+    -   https://www.kieselguitars.com/series/guitar/aries
+-   Gibson
+    -   https://www.gibson.com/en-US/Guitar/USAI9Q269/Les-Paul-Classic/Translucent-Cherry
+-   Taylor
+    -   https://www.taylorguitars.com/guitars/acoustic/914ce
+-   Martin
+    -   https://www.martinguitar.com/guitars/standard-series/D-28.html
+-   Vox
+    -   https://voxamps.com/en-gb/product/ac30-custom/
+-   Orange
+    -   https://orangeamps.com/products/guitar-amp-combos/crush-pro-series/crush-cr120c/
+-   Ernie Ball
+    -   https://ernieball.co.uk/guitar-accessories/guitar-straps/polypro-guitar-straps#
+
 Credit to [Ian Lunn](https://github.com/IanLunn/) for the code I used to animate the home page hero image button.
