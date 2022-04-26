@@ -54,6 +54,9 @@
                         {% if request.user.is_authenticated %}
                         <li class="dropdown-item" id="user-status">Logged in as {{ request.user }}</li>
                         <li><a class="dropdown-item" href="{% url 'wishlist' %}">Wishlist</a></li>
+                        {% if request.user.is_superuser %}
+                        <li><a class="dropdown-item" href="{% url 'view_queries' %}">Customer Queries</a></li>
+                        {% endif %}
                         <li><a class="dropdown-item" href="{% url 'account_logout' %}">Log Out</a></li>
                         {% else %}
                         <li><a class="dropdown-item" href="{% url 'account_login' %}">Log In</a></li>
