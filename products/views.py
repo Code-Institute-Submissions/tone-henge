@@ -1,4 +1,5 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib import messages
 from django.db.models import Q
 from .models import Product
 from comments.forms import CommentForm
@@ -17,6 +18,12 @@ def products(request):
     if request.GET:
         if 'q' in request.GET:
             search_term = request.GET['q']
+
+            if len(search_term) > 50:
+                messages.add_message(request,
+                                     messages.WARNING, 'Term too long!')
+
+                return redirect('home')
 
             queries = Q(name__icontains=search_term) | Q(
                 content__icontains=search_term) | \
