@@ -19,7 +19,8 @@ def products(request):
             search_term = request.GET['q']
 
             queries = Q(name__icontains=search_term) | Q(
-                content__icontains=search_term) | Q(category__name__icontains=search_term)
+                content__icontains=search_term) | \
+                Q(category__name__icontains=search_term)
             products = products.filter(queries)
 
         if 'category' in request.GET:
@@ -57,7 +58,8 @@ def product_view(request, product_id):
     on_wishlist = False
 
     if request.user.is_authenticated:
-        on_wishlist = request.user.wishlist.all().filter(product=product).exists()
+        on_wishlist = request.user.wishlist.all().filter(product=product) \
+            .exists()
 
     context = {'product': product, 'form': form, 'on_wishlist': on_wishlist, }
 

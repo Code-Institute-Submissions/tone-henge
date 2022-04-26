@@ -14,7 +14,8 @@ def contact(request):
         if form.is_valid():
             form.save()
             messages.add_message(
-                request, messages.SUCCESS, 'Thank you. Your query has been sent successfully.')
+                request, messages.SUCCESS, 'Thank you. Your query has been \
+                sent successfully.')
 
             return redirect('contact')
 
