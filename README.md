@@ -14,6 +14,8 @@ User stories are seen in the below table.
 
 This sheet is used for mapping user stories to features and epics throughout development. [It can be viewed here](https://docs.google.com/spreadsheets/d/1ob8nIBe4SKKu7h6s5SPkJSnqiatEzivwf0XZelbFMKs/edit?usp=sharing).
 
+Wireframes assisted keeping to the basic design of the project. These also helped out map the UI in advance. These can be seen [here](readme/general/wireframes.pdf).
+
 ## Database
 
 The schema diagram can be seen below.
