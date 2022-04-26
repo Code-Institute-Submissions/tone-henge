@@ -79,6 +79,44 @@ Users of the site are able to sign up to the newsletter on all pages across the 
 -   [View Facebook business page mockup.](/readme/marketing/facebook.pdf)
 -   A Mailchimp embedded newsletter form has been included.
 
+## Deployment
+
+This project is deployed to Heroku. It was initially set up on the Heroku website, but hooked up to the git repo via the Heroku CLI.
+
+Steps for deployment:
+
+-   Install Django and relevant dependencies.
+-   Create new Django project with appropriate Procfile for Heroku.
+-   Run:
+    ```
+    pip freeze --local > requirements.txt
+    ```
+-   Ensure all code is committed to Git.
+-   Navigate to Heroku, login, and click "create a new app".
+-   Enter a unique name for the application, and select the appropriate region.
+-   Add PostgreSQL 'hobby' database as a resource. The URL is automatically added to config vars.
+-   In the Heroku config vars, ensure 'DEVELOPMENT' is set to 'True' and 'DISABLE_COLLECTSTATIC' is set to '1' during development. Remove these settings when deploying.
+-   Link up the Git repo to the new app using:
+    ```
+    heroku git:remote -a example-app
+    ```
+-   Deploy the code with:
+    ```
+    git push heroku main
+    ```
+
+Cloning the repository:
+
+-   Navigate to the project repository.
+-   In the top right, click "Fork" to fork the repo.
+-   After you have your own fork of the repo, click the "Code" button. A dropdown should appear.
+-   Copy the HTTPS url and navigate to your local terminal.
+-   Clone the repo using the below command:
+
+```
+$ git clone "HTTPS URL"
+```
+
 ## Credit
 
 Product descriptions have been taken from their respective official product page:
