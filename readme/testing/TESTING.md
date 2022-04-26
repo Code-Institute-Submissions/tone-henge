@@ -2,6 +2,8 @@
 
 ## Validation
 
+-   HTML
+    -   All HTML has been validated with no errors via the [W3C Markup Validator](https://validator.w3.org/).
 -   CSS
     -   All CSS has been validated with no errors or warnings via the [W3C Validator](https://jigsaw.w3.org/css-validator/).
 
