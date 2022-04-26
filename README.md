@@ -50,6 +50,22 @@ Testing information can be found in [this dedicated document](readme/testing/TES
 
 ## Marketing
 
+### Purpose
+
+Tone Henge is made for people looking to purchase instruments online, made easy by simple yet effective UI and UX design. There is also a community aspect of the app, with users being able to comment on products, potentially opening up discussions around items.
+
+### Business Model
+
+Tone Henge is based on a B2C (business to consumer) ecommerce model, where the business in practice would deal and ship directly to the end-user. While it is possible that other businesses, such as schools or music venues, would purchase from the site, they would still effectively be the end-user, and Tone Henge would remain the direct and sole seller of the stock.
+
+### Marketing Strategy
+
+As this is a new business, the main focus is on audience growth and building a strong brand presence amongst potential customers.
+
+In practice, the primary marketing strategy for this application would be social media marketing. This would likely involve both paid and non-paid ad campaigns, targeting a specific demographic of potential customers. The business would initially need to investigate which platforms this demographic is most densely populated on, and begin targeted campaigns.
+
+Users of the site are able to sign up to the newsletter on all pages across the app. This allows for tailored promotions straight to the inbox of users.
+
 -   [View Facebook business page mockup.](/readme/marketing/facebook.pdf)
 -   A Mailchimp embedded newsletter form has been included.
 
