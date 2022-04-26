@@ -58,6 +58,36 @@ The schema diagram can be seen below.
 
 Testing information can be found in [this dedicated document](readme/testing/TESTING.md).
 
+## Technologies
+
+### Languages Used
+
+-   HTML/CSS
+-   JavaScript
+-   Python
+
+### Frameworks/Libraries Used
+
+-   [Django](https://www.djangoproject.com/)
+    -   Used as the backend for this project.
+-   [PostgreSQL](https://www.postgresql.org/)
+    -   PostgreSQL was used as a Heroku service as the database in deployment.
+    -   The database was accessed using Django's built-in ORM.
+-   [jQuery](https://jquery.com/)
+    -   Used for minimising/optimising JavaScript used in the project.
+-   [Boostrap](https://getbootstrap.com/)
+    -   Used for styling templates.
+-   [Git](https://git-scm.com/)
+    -   Used for local version control to then push remotely.
+-   [GitHub](https://github.com/)
+    -   Used to store the project after pushing to Git.
+-   [Heroku](https://dashboard.heroku.com/login)
+    -   Used to host the application.
+-   [AWS S3](https://aws.amazon.com/s3/)
+    -   Cloud service used to host and serve static files.
+-   [Hover.css](https://ianlunn.github.io/Hover/)
+    -   Used for home page button animation.
+
 ## Marketing
 
 ### Purpose
