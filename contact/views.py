@@ -1,6 +1,8 @@
 from django.shortcuts import redirect, render
-from .forms import UserQueryForm
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from .forms import UserQueryForm
+from .models import UserQuery
 
 
 def contact(request):
@@ -23,3 +25,19 @@ def contact(request):
     context = {'form': form, }
 
     return render(request, 'contact/contact.html', context)
+
+
+@login_required
+def view_queries(request):
+    """Render list of all queries for admin users."""
+
+    if not request.user.is_superuser:
+        messages.add_message(request, messages.WARNING,
+                             'You do not have permission to do that.')
+
+        return redirect('home')
+
+    queries = UserQuery.objects.all()
+    context = {'queries': queries, }
+
+    return render(request, 'contact/view_queries.html', context)
