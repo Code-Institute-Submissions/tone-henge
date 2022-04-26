@@ -76,7 +76,7 @@ def adjust_quantity(request, product_id):
 
     if request.method == 'POST':
         basket = request.session.get('basket', {})
-        new_quantity = request.POST['quantity']
+        new_quantity = int(request.POST['quantity'])
 
         if new_quantity > 99 or new_quantity < 1:
             messages.add_message(
@@ -85,7 +85,7 @@ def adjust_quantity(request, product_id):
 
             return redirect('basket')
 
-        basket[product_id] = int(new_quantity)
+        basket[product_id] = new_quantity
         request.session['basket'] = basket
 
         messages.add_message(request, messages.SUCCESS,
