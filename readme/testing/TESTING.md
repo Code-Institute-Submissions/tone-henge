@@ -3,9 +3,13 @@
 ## Validation
 
 -   HTML
-    -   All HTML has been validated with no errors via the [W3C Markup Validator](https://validator.w3.org/).
+    -   HTML has been validated with no errors via the [W3C Markup Validator](https://validator.w3.org/).
 -   CSS
-    -   All CSS has been validated with no errors or warnings via the [W3C Validator](https://jigsaw.w3.org/css-validator/).
+    -   CSS has been validated with no errors or warnings via the [W3C Validator](https://jigsaw.w3.org/css-validator/).
+-   Python
+    -   Python has been validated with no errors via the [PEP8 Validator](http://pep8online.com).
+-   JavaScript
+    -   JavaScript has been validated with no errors via [JSHint](https://jshint.com/).
 
 ## Bugs
 
