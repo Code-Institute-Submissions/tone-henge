@@ -4,7 +4,7 @@
 
 ![home preview](readme/general/home.png)
 
-Tone Henge is a full-stack eCommerce project built using Django, Heroku and AWS. This data-driven application has built developed using an agile methodology. Github Projects was used to create a kanban-style display used for reviewing iterations and prioritising stories to ensure the efficient product shipping.
+Tone Henge is a full-stack eCommerce project built using Django, Stripe, Heroku and AWS. This data-driven application has built developed using an agile methodology. Github Projects was used to create a kanban-style display used for reviewing iterations and prioritising stories to ensure the efficient product shipping.
 
 This can be viewed [here](https://github.com/jacobshortall/tone-henge/projects/1).
 
@@ -67,6 +67,7 @@ The main colours used across the app are red (#dc3545), white (#fff) and a dark 
     -   These queries are available for admin users to review on a page only they can access.
 -   Comments
     -   Authenticated users are able to leave reviews/comments underneath products. This can be used for discussion as well as advising on products.
+    -   Users are able to edit/delete comments, if they are the author.
 -   Wishlist
     -   Authenticated users are able to add products to a wishlist, so they can come back and review them later. This page is accessible from the navigation account dropdown.
 -   Add Product
@@ -77,6 +78,9 @@ The main colours used across the app are red (#dc3545), white (#fff) and a dark 
     -   A link to a modal that prompts users to sign up to a newsletter is available from the footer across all pages. This is part of the marketing strategy noted in the sections further below.
 
 ### Features to Implement in the Future
+
+-   Social Logins.
+-   Star review system.
 
 ## Database
 
@@ -129,6 +133,8 @@ Testing information can be found in [this dedicated document](readme/testing/TES
     -   The database was accessed using Django's built-in ORM.
 -   [jQuery](https://jquery.com/)
     -   Used for minimising/optimising JavaScript used in the project.
+-   [Stripe](https://stripe.com/gb)
+    -   Used to handle payments.
 -   [Boostrap](https://getbootstrap.com/)
     -   Used for styling templates.
 -   [Git](https://git-scm.com/)
