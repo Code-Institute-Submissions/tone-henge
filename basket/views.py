@@ -29,7 +29,9 @@ def add_to_basket(request, product_id):
                     return redirect(url)
 
                 messages.add_message(
-                    request, messages.WARNING, f'Quantity in basket already too high. You can only add {99 - basket[product_id]} more of this item.')
+                    request, messages.WARNING, f'Quantity in basket already \
+                    too high. You can only add {99 - basket[product_id]} more \
+                    of this item.')
 
                 return redirect(url)
 
@@ -37,7 +39,8 @@ def add_to_basket(request, product_id):
         else:
             if quantity > 99 or quantity < 1:
                 messages.add_message(
-                    request, messages.WARNING, 'You may only add 1-99 of a product to your basket.')
+                    request, messages.WARNING,
+                    'You may only add 1-99 of a product to your basket.')
 
                 return redirect(url)
 
@@ -77,7 +80,8 @@ def adjust_quantity(request, product_id):
 
         if new_quantity > 99 or new_quantity < 1:
             messages.add_message(
-                request, messages.WARNING, 'You may only add 1-99 of a product to your basket.')
+                request, messages.WARNING, 'You may only add 1-99 of a product\
+                 to your basket.')
 
             return redirect('basket')
 
