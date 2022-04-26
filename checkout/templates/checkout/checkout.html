@@ -46,7 +46,7 @@
         <!-- Details Form -->
         <div class="col-10 col-md-5 mt-2 mb-3">
             <h2 class="fs-3">Delivery Details</h2>
-            <form action="" method="POST" class="form" id="payment-form">
+            <form action="{% url 'checkout' %}" method="POST" class="form" id="payment-form">
                 {% csrf_token %}
                 {{ form.as_p }}
 
