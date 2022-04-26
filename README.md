@@ -1,8 +1,12 @@
 # Tone Henge
 
+[Project live link.](https://tone-henge.herokuapp.com/)
+
 ![home preview](readme/general/home.png)
 
-Tone Henge is a full-stack eCommerce project built using Django, Heroku and AWS.
+Tone Henge is a full-stack eCommerce project built using Django, Heroku and AWS. This data-driven application has built developed using an agile methodology. Github Projects was used to create a kanban-style display used for reviewing iterations and prioritising stories to ensure the efficient product shipping.
+
+This can be viewed [here](https://github.com/jacobshortall/tone-henge/projects/1).
 
 ## UX/UI
 
