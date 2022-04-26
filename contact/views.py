@@ -18,6 +18,12 @@ def contact(request):
 
             return redirect('contact')
 
+        if len(request.POST['query']) > 500:
+            messages.add_message(request, messages.WARNING,
+                                 'Query cannot exceed 500 characters.')
+
+            return redirect('contact')
+
     form = UserQueryForm()
     if request.user.is_authenticated:
         form = UserQueryForm(initial={'email': request.user.email})
