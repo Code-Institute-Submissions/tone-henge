@@ -92,6 +92,25 @@
     -   Changes are appropriately reflected in the database.
     -   Admin-only features.
 
+## Further Testing
+
+### Responsiveness
+
+Tested using Firefox and Chrome across all viewports. Tested directly on a Galaxy S10, as well as a 15" laptop screen.
+
+### General Tests
+
+-   All links are working correctly and lead to the correct place.
+-   Images are scaled and none are pixelated or blurred.
+-   All authentication barriers are in place. Role-based authenticated has been implemented. Users across the site can only access what they are permitted to.
+-   When logged in, account dropdown shows login status and gives option to logout.
+-   When logged in, authentication-only features are visible, e.g. wishlist, commenting.
+-   When logged out, users are prompted to sign in.
+-   Long strings do not break any inputs as word break has been put in place.
+-   Users are given feedback on all CRUD operations.
+-   Users are asked for confirmation on all critical operations.
+-   Buttons are easy to click for all users across devices.
+
 ## Bugs
 
 ### Current
